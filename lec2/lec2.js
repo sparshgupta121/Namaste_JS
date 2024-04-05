@@ -70,9 +70,13 @@ else{
     console.log("Absent")
 }
 
-//object cloning
+// object cloning
 //iteration for key in src; dest[key]=src[key] 
 // assignment=Object.assign({},src)
 //spread obj=={...src}
 
+let src={
+    value:10
+}
 
+let des
