@@ -22,3 +22,7 @@ console.log(booleanisLoggedin);
 //" sparsh " => true
 
 let num= 33
+let stringnum = String(num)
+
+console.log(stringnum)
+console.log(typeof stringnum);
