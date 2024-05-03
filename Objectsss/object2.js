@@ -84,11 +84,48 @@ const Arrayobj = [
 console.log(Arrayobj[1].contact);
 
 console.log(instaUser);
-console.log(Object.entries(instaUser));
+console.log(Object.keys(instaUser));
 
 console.log(instaUser.hasOwnProperty('isLoggedIn'));
 
  
+const course = {
+
+    coursename:"Js Hindi",
+    price:999,
+    instructor:"Hitesh Choudhary"
+
+}
+
+
+const {instructor: courseinstructor}= course
+
+// console.log(instructor);
+console.log(courseinstructor);
+
+/* react 
+const navbar = () => {
+
+}
+
+navbar(company = "sparsh")   */
+
+
+/****************** syntax for JSON
+
+{
+
+    "name":"sparsh",
+    "price":"free",
+    "paltform":"youtube"
+
+}
+
+********************** */
+
+
+
+
 
 
 
