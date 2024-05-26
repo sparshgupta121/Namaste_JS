@@ -27,11 +27,13 @@ for (const [key,value] of map) {
 const myObject = {
      'game1':'NFS',
      'game2':'spiderman'
-}
+} //can't apply loop directly on object
 
+const coding = [ "js","ruby", 'java', "C++" , "python","Rust"]
 
+coding.forEach( function (item){ console.log(item);} )
 
-
+ coding.forEach((item)=>{console.log(item);})
 
 
 
