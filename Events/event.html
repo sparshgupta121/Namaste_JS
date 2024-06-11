@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+
+
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+
+             <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" onclick="alert('owl')" alt="" ></li> <!-- not a good approch to add onclick because it is not feasabile and create issue in scaling in react it is scalable -->
+
+
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" o alt=""></li>
+
+
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+
+ /*In js event runs sequentially js is a Sequential language
+but there are some exceptions like in asynchronous function we do things prior and vice versa*/
+
+//similar are browser events they are invoked on some activity like click scroll keypress etc
+
+document.getElementById('owl').onclick = function(){
+    alert("owlllllllll")
+}
+
+// using onclick on element again is not a good approach bcoz we didn't get much info using on click
+//so we have to use event listners they give us functionality of on click and propogation
+
+
+
+document.getElementById('owl').addEventListener('click',function(e){ //event object e
+
+    // to study type,timestamp,defaultPrevented, target, to element ,srcelement , curreleemnt
+//clientX clientY screenX screenY offset
+//altkey, ctrlkey, shiftkey, keycode
+
+
+console.log(e)},false)
+
+//event propogation 2 context --> Event Bubbling & Event Capturing
+//mostly used Default (false)-->Event Bubling
+
+document.getElementById('images').addEventListener('click',function(e){
+    console.log('clicked inside the ul')
+},false)
+
+
+document.getElementById('owl').addEventListener('click',function(e){
+    console.log('owlClickedAgainnn')
+    // e.stopPropagation()
+},false)
+
+//attachEvent() is another and primitive approach
+// jQuery -> on (it is like onclick in js)
+
+document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation()
+   
+    console.log('google Clicked');
+},false)
+
+document.querySelector('#images').addEventListener('click',function(e){ 
+
+console.log(e.target.tagName)
+if(e.target.tagName==='IMG'){
+let removeiT= e.target.parentNode
+removeiT.remove()
+removeiT.parentNode.removeChild(removeiT)
+} 
+
+
+
+})
+
+
+</script>
+
+
+</html>
