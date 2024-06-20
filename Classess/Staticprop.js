@@ -28,6 +28,6 @@ this.email=email
     }
 }
 
-const iphone = new Teacher("iphone","iphone@apple.com")
+const iphone = new Teacher("iphone","i-phone@apple.com")
 
 iphone.logMe()
