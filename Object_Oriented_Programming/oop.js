@@ -4,7 +4,7 @@ const user = {
     username:"Sparsh",
     logincopunt:8,
     Siggnedin:true,
-    Password:"******",
+    Password:"12345678",
 
     getUserDetails: function(){
         console.log("User Details Fetched")
