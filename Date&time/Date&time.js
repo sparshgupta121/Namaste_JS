@@ -14,7 +14,7 @@ console.log(myDate.toLocaleString());
 let wemyDate = new Date(2023, 0, 23, 5, 3)
 console.log(wemyDate.toLocaleString());
 
-let memyDate = new Date("2023-01-14")
+let memyDate = new Date("2024-05-14")
 console.log(memyDate.toLocaleString());
 
 let mytimestamp = Date.now()
